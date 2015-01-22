@@ -6,7 +6,8 @@ module SimpleNavigation
                 :key,
                 :method,
                 :sub_navigation,
-                :url
+                :url,
+                :level
 
     attr_writer :html_options
 
@@ -38,7 +39,13 @@ module SimpleNavigation
         @name
       end
     end
-
+    
+    # Returns the level of this navigation item
+    #
+    def level
+      container.level
+    end
+    
     # Returns true if this navigation item should be rendered as 'selected'.
     # An item is selected if
     #
